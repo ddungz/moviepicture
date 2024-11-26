@@ -54,7 +54,7 @@ jobs:
       - name: Dependencies installation
         run: |
           npm install -f
-    
+
       - name: Tests run
         run: |
           npm run test
