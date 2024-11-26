@@ -14,6 +14,15 @@ env:
   PYTHON_VERSION: "3.10"
 
 jobs:
+  pyversion:
+    name: getpy version
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: starter/backend
+    steps:
+      - name: Print PYTHON_VERSION
+        run: echo "Python version: ${{ env.PYTHON_VERSION }}"
   lint:
     name: MP Backend Lint run
     runs-on: ubuntu-latest
