@@ -49,4 +49,5 @@
   height: 100%;
   color: greenyellow;
   display: flex;
+  flex-direction: column;
 }
