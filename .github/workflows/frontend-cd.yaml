@@ -14,10 +14,9 @@ env:
   NODE_VERSION: 18.x
 
 jobs:
-  # Runs the following jobs in parallel: `lint`, `test`
   lint:
     name: MP Frontend Lint run
-    runs-on:  ubuntu-latest
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./frontend
@@ -68,7 +67,7 @@ jobs:
         working-directory: ./frontend
     steps:
       - name: Code checkout
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
       
       - name: Dependencies installation
         run: |
