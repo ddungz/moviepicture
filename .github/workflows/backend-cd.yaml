@@ -9,7 +9,7 @@ on:
         - main
       paths:
         # only when code in the backend application changes
-        - "backend/**"
+        - "starter/backend/**"
 env:
   NODE_VERSION: 18.x
 
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: starter/backend
     steps:
       - name: Code checkout
         uses: actions/checkout@v3
@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: starter/backend
     steps:
       - name: Code checkout
         uses: actions/checkout@v3
@@ -82,7 +82,7 @@ jobs:
     needs: [lint, test]
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: starter/backend
     steps:
       - name: Code checkout
         uses: actions/checkout@v3
@@ -157,16 +157,16 @@ jobs:
           aws eks update-kubeconfig --name ${{ secrets.CLUSTER_NAME }} --region ${{ secrets.AWS_REGION }}
       
       - name: Run init
-        working-directory: ./setup
+        working-directory: starter/setup
         run: |
           ./init.sh || true
       
       - name: Update Kustomize image
-        working-directory: ./backend/k8s
+        working-directory: starter/backend/k8s
         run: |
           kustomize edit set image backend=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/${{ secrets.ECR_BACKEND_REPOSITORY_NAME }}:${GITHUB_SHA}
 
       - name: Apply K8s resources
-        working-directory: ./backend/k8s
+        working-directory: starter/backend/k8s
         run: |
           kustomize build | kubectl apply -f -
