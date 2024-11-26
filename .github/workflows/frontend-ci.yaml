@@ -3,13 +3,13 @@ name: MP Frontend Continuous Integration
 on:
   # Allows run on-demand
   workflow_dispatch:
-    # Runs on `pull_requests` against the `main` branch
-    pull_request:
-      branches:
-        - main
-      paths:
-        # only when code in the frontend application changes
-        - "starter/frontend/**"
+  # Runs on `pull_requests` against the `main` branch
+  pull_request:
+    branches:
+      - main
+    paths:
+      # only when code in the frontend application changes
+      - "starter/frontend/**"
 env:
   NODE_VERSION: 18.x
 

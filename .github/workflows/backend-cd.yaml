@@ -3,13 +3,13 @@ name: MP Backend Continuous Deployment
 on:
   # Allows run on-demand
   workflow_dispatch:
-    # Runs on `push` against the `main` branch
-    push:
-      branches:
-        - main
-      paths:
-        # only when code in the backend application changes
-        - "starter/backend/**"
+  # Runs on `push` against the `main` branch
+  push:
+    branches:
+      - main
+    paths:
+      # only when code in the backend application changes
+      - "starter/backend/**"
 env:
   NODE_VERSION: 18.x
 
