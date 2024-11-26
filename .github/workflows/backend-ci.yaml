@@ -123,11 +123,3 @@ jobs:
         run: |
           docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_FRONTEND_REPOSITORY_NAME }}:latest .
           docker images
-
-      - name: Cache docker image
-        uses: actions/cache@v3
-        with:
-          path: ~/docker-cache
-          key: docker-${{ github.sha }}-backend
-          restore-keys: |
-            docker-${{ github.sha }}-
