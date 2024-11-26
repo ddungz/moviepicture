@@ -53,10 +53,10 @@ jobs:
       - name: Dependencies installation
         run: |
           npm install -f
-    
-    - name: Tests run
-      run: |
-        npm run test
+      
+      - name: Tests run
+        run: |
+          npm run test
 
   build:
     name: Build docker image
