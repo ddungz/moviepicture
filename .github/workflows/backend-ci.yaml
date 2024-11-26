@@ -73,9 +73,9 @@ jobs:
         run: |
           pipenv install
 
-    - name: Tests run
-      run: |
-        npm run test
+      - name: Tests run
+        run: |
+          npm run test
 
   build:
     name: Build docker image
