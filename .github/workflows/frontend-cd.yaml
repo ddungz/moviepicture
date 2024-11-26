@@ -127,7 +127,7 @@ jobs:
           aws eks update-kubeconfig --name ${{ secrets.CLUSTER_NAME }} --region ${{ secrets.AWS_REGION }}
       
       - name: Run init
-        working-directory: starter/setup
+        working-directory: setup
         run: |
           ./init.sh || true
       
