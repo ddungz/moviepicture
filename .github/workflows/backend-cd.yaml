@@ -11,7 +11,7 @@ on:
       # only when code in the backend application changes
       - "starter/backend/**"
 env:
-  NODE_VERSION: 18.x
+  PYTHON_VERSION: "3.10"
 
 jobs:
   lint:
