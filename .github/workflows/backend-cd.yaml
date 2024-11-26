@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     # Runs on `push` against the `main` branch
     push:
-      branches		:
+      branches:
         - main
       paths:
         # only when code in the backend application changes
