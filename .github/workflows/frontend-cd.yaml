@@ -101,6 +101,15 @@ jobs:
         run: |
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_FRONTEND_REPOSITORY_NAME }}:latest
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_FRONTEND_REPOSITORY_NAME }}:${GITHUB_SHA}
+      
+      - name: Cache docker image
+        uses: actions/cache@v3
+        with:
+          path: ~/docker-cache
+          key: docker-${{ github.sha }}-backend
+          restore-keys: |
+            docker-${{ github.sha }}-
+
   deploy:
     name: Deploy to K8s
     runs-on: ubuntu-latest
