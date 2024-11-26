@@ -78,7 +78,7 @@ jobs:
 
       - name: Tests run
         run: |
-          npm run test
+          pipenv run test
 
   build:
     env:
