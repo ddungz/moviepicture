@@ -9,7 +9,7 @@ on:
         - main
       paths:
         # only when code in the frontend application changes
-        - "frontend/**"
+        - "starter/frontend/**"
 env:
   NODE_VERSION: 18.x
 
