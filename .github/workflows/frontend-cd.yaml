@@ -106,7 +106,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/docker-cache
-          key: docker-${{ github.sha }}-backend
+          key: docker-${{ github.sha }}-frontend
           restore-keys: |
             docker-${{ github.sha }}-
 
