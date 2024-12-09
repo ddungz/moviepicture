@@ -8,6 +8,7 @@ movies = {
     "789": {"title": "A Quiet Place", "description": "Scary monsters"},
     "990": {"title": "Network", "description": "Science hacks"},
     "991": {"title": "Social network", "description": "Life hacks"},
+    "992": {"title": "Social network 2", "description": "Life hacks 2"},
     "999": {"title": "Transformer", "description": "Fiction ages"},
 }
 
